@@ -13,21 +13,6 @@ class Main extends React.Component {
     this.state = {};
   }
 
-  /*componentDidMount() {
-    fetch('http://127.0.0.1:8080/getData')
-    .then(blob => blob.json())
-    .then(data => {
-      this.setState({
-        gaugeData: data.gaugeData,
-        areaData: data.areaData
-      })
-      //console.log(this.state.gaugeData);
-    })
-    .catch((err) => {
-      console.log("whoopsie")
-    })
-  }*/
-
   render() {
     return(
       <span className="MainContainer">

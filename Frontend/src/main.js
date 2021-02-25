@@ -135,7 +135,7 @@ export default class MainBodyContent extends React.Component {
     let xScale = [];
     let xAxis = 0;
     for(let i = 0; i < data.length; i++) {
-      dataPair.push({x: xAxis, y: 100-data[i].score});
+      dataPair.push({x: xAxis, y: data[i].score});
       xScale.push(data[i].date)
       xAxis += sectionWidth;
     }
@@ -147,7 +147,7 @@ export default class MainBodyContent extends React.Component {
     let curveFunc = d3.area()
                       .x(d => d.x)
                       .y0(100*3)
-                      .y1(d => d.y*3);
+                      .y1(d => (100-d.y)*3);
 
     let makeCirc = areaChart.selectAll('circle').data(dataPair).enter();
     let makePerc = areaChart.selectAll('text').data(dataPair).enter();
@@ -164,14 +164,15 @@ export default class MainBodyContent extends React.Component {
 
     makeCirc.append("circle")
                 .attr("cx", d => d.x)
-                .attr("cy", d => d.y*3)
+                .attr("cy", d => (100-d.y)*3)
                 .attr("r", 10)
-                .attr('stroke', 'black')
+                .attr('stroke', 'white')
+                .attr('stroke-width', 2)
                 .attr('fill', '#69a3b2')
 
     makePerc.append('text')
-                .text(d => d.y + "%")
-                .attr("transform", d => "translate(" + (d.x-10) + "," + ((d.y*3)-20) + ")")
+                .text(d => (100-d.y) + "%")
+                .attr("transform", d => "translate(" + (d.x-10) + "," + (((100-d.y)*3)-20) + ")")
                 .attr('fill', 'black')
 
   }
