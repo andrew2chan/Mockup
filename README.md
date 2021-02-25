@@ -1,7 +1,7 @@
-#Mockup
+# Mockup
 This is a mockup project that is made with D3.JS and React
 
-#To run
+# To run
 Go to the "Backend" directory in command line and type:
 
 `node app.js`
