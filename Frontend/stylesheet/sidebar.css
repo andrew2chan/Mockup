@@ -1,0 +1,39 @@
+.sidebar {
+  grid-area: sidebar;
+  background-color: #002966;
+}
+
+svg {
+  color: white;
+}
+
+.sidebarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebarContainer:first-child {
+  margin-top: 50px;
+}
+
+.isNotActive {
+  background-color: #002966;
+  border-top: 1px solid black;
+}
+
+.isNotActive:last-child {
+  border-bottom: 1px solid black;
+}
+
+.isActive {
+  background-color: #001f4d;
+  border: 1px solid white;
+}
+
+.sidebarContainer:hover {
+  background-color: #001f4d;
+  border: 1px solid white;
+}
